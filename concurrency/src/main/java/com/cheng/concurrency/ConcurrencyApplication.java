@@ -1,12 +1,12 @@
-package com.example.demo;
+package com.cheng.concurrency;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class ConcurrencyApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(ConcurrencyApplication.class, args);
     }
 }
