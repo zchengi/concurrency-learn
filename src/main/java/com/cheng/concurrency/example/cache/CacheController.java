@@ -19,14 +19,14 @@ public class CacheController {
 
     @RequestMapping("/set")
     @ResponseBody
-    public String set(@RequestParam("k") String k, @RequestParam("v") String v) throws Exception {
+    public String set(@RequestParam("k") String k, @RequestParam("v") String v) {
         redisClient.set(k, v);
         return "SUCCESS";
     }
 
     @RequestMapping("/get")
     @ResponseBody
-    public String get(@RequestParam("k") String k) throws Exception {
+    public String get(@RequestParam("k") String k) {
         return redisClient.get(k);
     }
 }
