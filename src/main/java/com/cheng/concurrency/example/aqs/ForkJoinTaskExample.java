@@ -42,8 +42,12 @@ public class ForkJoinTaskExample extends RecursiveTask<Integer> {
             ForkJoinTaskExample rightTask = new ForkJoinTaskExample(middle + 1, end);
 
             // 执行子任务
-            leftTask.fork();
-            rightTask.fork();
+            // fork方法相当于A先分工给B，然后A当监工不干活，B去完成A交代的任务
+//            leftTask.fork();
+//            rightTask.fork();
+
+            // invokeAll相当于A分工给B后，A和B都去完成工作
+            invokeAll(leftTask, rightTask);
 
             // 等待任务执行结束合并其结果
             int leftResult = leftTask.join();
